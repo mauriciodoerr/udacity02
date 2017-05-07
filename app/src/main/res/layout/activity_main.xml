@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:padding="16dp"
     tools:context="com.example.android.justjava.MainActivity">
 
     <TextView
@@ -16,14 +17,16 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
+        android:layout_marginTop="16dp"
         android:orientation="horizontal">
 
         <Button
+            android:id="@+id/btn_min"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:onClick="modifyQuantity"
             android:text="@string/btn_min" />
 
         <TextView
@@ -36,18 +39,34 @@
             android:textColor="@android:color/black" />
 
         <Button
+            android:id="@+id/btn_max"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:onClick="modifyQuantity"
             android:text="@string/btn_max" />
 
     </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/price"
+        android:textAllCaps="true"/>
+
+    <TextView
+        android:id="@+id/price_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/price_value"/>
 
     <Button
         android:id="@+id/btn_order"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/btn_order"
-        android:onClick="submitOrder" />
+        android:onClick="submitOrder"
+        android:text="@string/btn_order" />
 
 </LinearLayout>
