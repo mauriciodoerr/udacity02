@@ -47,6 +47,7 @@
         android:id="@+id/btn_order"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/btn_order" />
+        android:text="@string/btn_order"
+        android:onClick="submitOrder" />
 
 </LinearLayout>
