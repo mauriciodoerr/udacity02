@@ -42,9 +42,9 @@ public class MainActivity extends AppCompatActivity {
         TextView quantity = (TextView) findViewById(R.id.quantity_text_view);
         TextView price = (TextView) findViewById(R.id.price_text_view);
 
-        if (view == findViewById(R.id.btn_min) && Integer.parseInt(quantity.getText().toString()) > 0) {
+        if (findViewById(R.id.btn_min).equals(view) && Integer.parseInt(quantity.getText().toString()) > 0) {
             qtdNumber = Integer.parseInt(quantity.getText().toString()) - 1;
-        } else if (view == findViewById(R.id.btn_max)){
+        } else if (findViewById(R.id.btn_max).equals(view)){
             qtdNumber = Integer.parseInt(quantity.getText().toString()) + 1;
         }
 
