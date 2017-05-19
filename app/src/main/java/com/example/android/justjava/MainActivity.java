@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.NumberPicker;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
@@ -26,7 +27,11 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
-        display(77 * 2 + 1);
+        TextView quantity = (TextView) findViewById(R.id.quantity_text_view);
+
+        if (!quantity.getText().toString().equals("0")) {
+            Toast.makeText(this, "Thanks for buying!", Toast.LENGTH_SHORT).show();
+        }
     }
 
     /**
@@ -44,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (findViewById(R.id.btn_min).equals(view) && Integer.parseInt(quantity.getText().toString()) > 0) {
             qtdNumber = Integer.parseInt(quantity.getText().toString()) - 1;
-        } else if (findViewById(R.id.btn_max).equals(view)){
+        } else if (findViewById(R.id.btn_max).equals(view)) {
             qtdNumber = Integer.parseInt(quantity.getText().toString()) + 1;
         }
 
@@ -57,4 +62,5 @@ public class MainActivity extends AppCompatActivity {
         int priceTag = qtdNumber * 5;
         return "" + NumberFormat.getCurrencyInstance().format(priceTag);
     }
+
 }
